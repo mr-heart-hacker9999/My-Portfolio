@@ -801,9 +801,7 @@ justify-content: center;
     width: 100%;
     background-color: black;
     height: 15rem;
-    position:relative;
-    left:0px;
-    bottom:0px;
+  
 }
 
 #footer h3{
