@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsDivyansh | Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        /* Existing Global Styles from your index.html */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        /* NEW: Custom styles for tabbed interface */
+        .tab-button.active {
+            background-color: #667eea;
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .tab-button {
+            border: 2px solid transparent;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <a href="index.html" class="flex items-center py-4 px-2">
+                        <span class="font-semibold text-gray-900 text-2xl">itsDivyansh</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html"
+                        class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Home</a>
+                    <a href="about.html"
+                        class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">About</a>
+                    <a href="projects.html"
+                        class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Projects</a>
+                    <a href="skills.html"
+                        class="py-4 px-2 text-indigo-600 border-b-4 border-indigo-600 font-medium">Skills</a>
+                    <a href="contact.html"
+                        class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i data-feather="menu" class="w-6 h-6 text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul>
+                <li><a href="index.html"
+                        class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Home</a>
+                </li>
+                <li><a href="about.html"
+                        class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">About</a>
+                </li>
+                <li><a href="projects.html"
+                        class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Projects</a>
+                </li>
+                <li><a href="skills.html" class="block text-sm px-2 py-4 bg-indigo-600 text-white">Skills</a></li>
+                <li><a href="contact.html"
+                        class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-gradient text-white pt-32 pb-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-down">Technical Expertise</h1>
+            <p class="text-xl opacity-90" data-aos="fade-up" data-aos-delay="200">A detailed breakdown of my proficiency
+                across the full development stack.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+
+            <div class="flex flex-wrap justify-center space-x-2 md:space-x-4 mb-12" data-aos="fade-up">
+                <button
+                    class="tab-button active bg-indigo-600 text-white px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-indigo-700"
+                    data-tab="frontend">Frontend</button>
+                <button
+                    class="tab-button bg-white text-gray-700 px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-gray-100 border border-gray-300"
+                    data-tab="backend">Backend</button>
+                <button
+                    class="tab-button bg-white text-gray-700 px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-gray-100 border border-gray-300"
+                    data-tab="database">Database & Data</button>
+                <button
+                    class="tab-button bg-white text-gray-700 px-6 py-2 rounded-full font-medium transition duration-300 hover:bg-gray-100 border border-gray-300"
+                    data-tab="devops">DevOps & Tools</button>
+            </div>
+
+            <div id="skills-container">
+
+                <div id="frontend" class="skill-tab active" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-indigo-700">Frontend Development</h2>
+                    <div class="space-y-8">
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">React & Ecosystem (Redux/Context)</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">95% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">JavaScript (ES6+) & TypeScript</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">90% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">Tailwind CSS & Utility Frameworks</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">85% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">Next.js & Server-Side Rendering (SSR)</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">75% Proficiency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="backend" class="skill-tab hidden" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-indigo-700">Backend Development</h2>
+                    <div class="space-y-8">
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">Node.js & Express.js</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">90% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">Python & Django/Flask</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">80% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">RESTful API Design & GraphQL</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">85% Proficiency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="database" class="skill-tab hidden" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-indigo-700">Database & Data Management</h2>
+                    <div class="space-y-8">
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">PostgreSQL & SQL Optimization</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">88% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">MongoDB & NoSQL Design</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">80% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">Redis & Caching Strategies</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">70% Proficiency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="devops" class="skill-tab hidden" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-indigo-700">DevOps & Tools</h2>
+                    <div class="space-y-8">
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">Docker & Containerization</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 82%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">82% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">AWS (EC2, S3, RDS)</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 78%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">78% Proficiency</span>
+                        </div>
+                        <div class="skill-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                            <h4 class="text-lg font-semibold mb-2">CI/CD Pipelines (GitHub Actions/GitLab)</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="hero-gradient h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <span class="text-sm text-gray-600 mt-1 block text-right">85% Proficiency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 px-4 hero-gradient text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Need a Technical Deep Dive?</h2>
+            <p class="text-xl mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">Let's discuss how my specific
+                skills can benefit your team's architecture.</p>
+            <a href="contact.html"
+                class="inline-block bg-white text-indigo-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300"
+                data-aos="fade-up" data-aos-delay="200">Contact for Tech Specs</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">itsDivyansh</h3>
+                    <p class="text-gray-400">Creating digital experiences that make an impact.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="projects.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                        <li><a href="skills.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Skills</a></li>
+                        <li><a href="contact.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Skills</h4>
+                    <ul class="space-y-2">
+                        <li><a href="skills.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Frontend</a></li>
+                        <li><a href="skills.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Backend</a></li>
+                        <li><a href="skills.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Database</a></li>
+                        <li><a href="skills.html"
+                                class="text-gray-400 hover:text-white transition duration-300">DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/mr-heart-hacker9999"
+                            class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://x.com/MauryaDiv43215?t=8TPmPGHjIRITCY0yiitLbw&s=08"
+                            class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/divyansh-maurya-9432112a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_mr_heart_hacker9999?igsh=N3ZuczZ2Mm5ieHdq"
+                            class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="mailto:divyanshmaurya37@gmail.com"
+                            class="text-gray-400 hover:text-white transition duration-300">divyanshmaurya37@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 itsDivyansh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.querySelector('.mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Skills Tab Switching Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const skillTabs = document.querySelectorAll('.skill-tab');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTabId = button.getAttribute('data-tab');
+
+                    // 1. Deactivate all buttons and tabs
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-indigo-600', 'text-white', 'border-indigo-600');
+                        btn.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+                    });
+                    skillTabs.forEach(tab => tab.classList.add('hidden'));
+
+                    // 2. Activate the clicked button
+                    button.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+                    button.classList.add('active', 'bg-indigo-600', 'text-white', 'border-indigo-600');
+
+                    // 3. Show the corresponding tab with a fade effect
+                    const targetTab = document.getElementById(targetTabId);
+                    if (targetTab) {
+                        // Use a brief delay to ensure the hidden class is removed after styling updates
+                        setTimeout(() => {
+                            targetTab.classList.remove('hidden');
+                            AOS.refreshHard(); // Re-scan to ensure AOS animations fire on the new content
+                        }, 50);
+                    }
+                });
+            });
+
+            // Initialize AOS and Feather Icons
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+</body>
+
+</html>

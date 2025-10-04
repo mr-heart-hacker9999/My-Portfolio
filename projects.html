@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsDivyansh | Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        /* Existing Global Styles from your index.html */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        /* NEW: Filter button active state */
+        .filter-btn.active {
+            background-color: #667eea; /* Tailwind's indigo-500 equivalent */
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <a href="index.html" class="flex items-center py-4 px-2">
+                        <span class="font-semibold text-gray-900 text-2xl">itsDivyansh</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Home</a>
+                    <a href="about.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">About</a>
+                    <a href="projects.html" class="py-4 px-2 text-indigo-600 border-b-4 border-indigo-600 font-medium">Projects</a>
+                    <a href="skills.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Skills</a>
+                    <a href="contact.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i data-feather="menu" class="w-6 h-6 text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul>
+                <li><a href="index.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Home</a></li>
+                <li><a href="about.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">About</a></li>
+                <li><a href="projects.html" class="block text-sm px-2 py-4 bg-indigo-600 text-white">Projects</a></li>
+                <li><a href="skills.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Skills</a></li>
+                <li><a href="contact.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-gradient text-white pt-32 pb-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-down">My Full Portfolio</h1>
+            <p class="text-xl opacity-90" data-aos="fade-up" data-aos-delay="200">A collection of robust fullstack, frontend, and design projects.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="flex flex-wrap justify-center space-x-2 md:space-x-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn active bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300 hover:bg-indigo-700" data-filter="all">All Projects</button>
+                <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition duration-300 hover:bg-gray-100 border border-gray-200" data-filter="fullstack">Fullstack</button>
+                <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition duration-300 hover:bg-gray-100 border border-gray-200" data-filter="frontend">Frontend</button>
+                <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition duration-300 hover:bg-gray-100 border border-gray-200" data-filter="design">Design/UI</button>
+                <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition duration-300 hover:bg-gray-100 border border-gray-200" data-filter="devops">DevOps</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="projects-container">
+                
+                <div class="project-item fullstack project-card bg-white rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/5" alt="Project 1" class="w-full h-56 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Enterprise Project Management Tool</h3>
+                        <p class="text-gray-600 mb-4">Scalable, real-time tool for large teams featuring a custom kanban board.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">React</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Django</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item frontend project-card bg-white rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/6" alt="Project 2" class="w-full h-56 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Minimalist Blog Theme</h3>
+                        <p class="text-gray-600 mb-4">Highly optimized, accessible theme built with modern CSS Grid and custom typography.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Vue.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Tailwind CSS</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">GSAP (CSS)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item devops project-card bg-white rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/7" alt="Project 3" class="w-full h-56 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Architecture</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Automated Deployment Pipeline</h3>
+                        <p class="text-gray-600 mb-4">A CI/CD pipeline set up to deploy a microservice application to AWS Fargate.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Docker</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">AWS</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Gitlab CI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item design project-card bg-white rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/8" alt="Project 4" class="w-full h-56 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Wireframes</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Healthcare App Redesign</h3>
+                        <p class="text-gray-600 mb-4">UI/UX audit and redesign focused on accessibility and improved user task flow.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">A/B Testing</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item fullstack project-card bg-white rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/9" alt="Project 5" class="w-full h-56 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Repository</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Real-Time Chat Application</h3>
+                        <p class="text-gray-600 mb-4">Built with WebSockets for instant messaging and presence detection.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Socket.io</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Redis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item frontend project-card bg-white rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/10" alt="Project 6" class="w-full h-56 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Code</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Interactive Data Dashboard</h3>
+                        <p class="text-gray-600 mb-4">A lightweight, dynamic dashboard using vanilla JavaScript for speed.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Vanilla JS</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">D3.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="py-20 px-4 hero-gradient text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Have a Project in Mind?</h2>
+            <p class="text-xl mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">Let's discuss how my fullstack skills can bring your vision to life.</p>
+            <a href="contact.html" class="inline-block bg-white text-indigo-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300" data-aos="fade-up" data-aos-delay="200">Start a Conversation</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">itsDivyansh</h3>
+                    <p class="text-gray-400">Creating digital experiences that make an impact.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Skills</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Skills</h4>
+                    <ul class="space-y-2">
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Frontend</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Backend</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Database</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/mr-heart-hacker9999" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://x.com/MauryaDiv43215?t=8TPmPGHjIRITCY0yiitLbw&s=08" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/divyansh-maurya-9432112a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_mr_heart_hacker9999?igsh=N3ZuczZ2Mm5ieHdq" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="mailto:divyanshmaurya37@gmail.com" class="text-gray-400 hover:text-white transition duration-300">divyanshmaurya37@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 itsDivyansh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.querySelector('.mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Projects Filter Logic (Unique Script)
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state for buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-indigo-600', 'text-white'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-white', 'text-gray-700'));
+                    
+                    button.classList.remove('bg-white', 'text-gray-700');
+                    button.classList.add('active', 'bg-indigo-600', 'text-white');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    projectItems.forEach(item => {
+                        // Use the AOS animation class for transitions (fade-out before hiding)
+                        item.classList.add('opacity-0', 'scale-95', 'duration-300'); 
+                        setTimeout(() => {
+                            if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                                item.style.display = 'block';
+                                // Re-apply the fade-up animation after showing
+                                item.setAttribute('data-aos', 'fade-up'); 
+                                AOS.refreshHard(); // Force AOS to re-scan elements
+                                
+                                // Remove scale-95 class after the item is shown
+                                setTimeout(() => item.classList.remove('opacity-0', 'scale-95'), 50); 
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }, 300); // Match CSS duration
+                    });
+                });
+            });
+
+            // Initialize AOS and Feather Icons
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+</body>
+</html>

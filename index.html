@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsDivyansh | Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <a href="index.html" class="flex items-center py-4 px-2">
+                        <span class="font-semibold text-gray-900 text-2xl">itsDivyansh</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="py-4 px-2 text-indigo-600 border-b-4 border-indigo-600 font-medium">Home</a>
+                    <a href="about.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">About</a>
+                    <a href="projects.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Projects</a>
+                    <a href="skills.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Skills</a>
+                    <a href="contact.html" class="py-4 px-2 text-gray-500 hover:text-indigo-600 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i data-feather="menu" class="w-6 h-6 text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul>
+                <li><a href="index.html" class="block text-sm px-2 py-4 bg-indigo-600 text-white">Home</a></li>
+                <li><a href="about.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">About</a></li>
+                <li><a href="projects.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Projects</a></li>
+                <li><a href="skills.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Skills</a></li>
+                <li><a href="contact.html" class="block text-sm px-2 py-4 hover:bg-indigo-600 hover:text-white transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Divyansh</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Fullstack Web Developer</h2>
+                    <p class="text-lg mb-8 opacity-90">I build exceptional digital experiences that are fast, accessible, and visually appealing.</p>
+                    <div class="flex space-x-4">
+                        <a href="projects.html" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">View Projects</a>
+                        <a href="contact.html" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition duration-300">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <img src="http://static.photos/technology/640x360/1" alt="Developer" class="rounded-lg shadow-2xl max-w-md w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/2" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="projects.html" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online store with payment integration and admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/3" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="projects.html" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">Productivity application with real-time collaboration features.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Firebase</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/4" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="projects.html" class="text-white font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Social Media Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Analytics dashboard for social media managers with data visualization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Angular</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">D3.js</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Express</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="projects.html" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-indigo-700 transition duration-300">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Preview -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">My Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="code" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+                    <p class="text-gray-600">React, Vue, Angular, HTML5, CSS3, JavaScript, TypeScript</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="server" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Backend</h3>
+                    <p class="text-gray-600">Node.js, Express, Django, Python, PHP, REST APIs, GraphQL</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="database" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Database</h3>
+                    <p class="text-gray-600">MongoDB, PostgreSQL, MySQL, Firebase, Redis, ORMs</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="tool" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">DevOps</h3>
+                    <p class="text-gray-600">Docker, AWS, CI/CD, Git, Linux, Nginx, Testing</p>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="skills.html" class="inline-block border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-lg font-medium hover:bg-indigo-600 hover:text-white transition duration-300">Explore All Skills</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Client Testimonials</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-yellow-400 mb-4">
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Divyansh transformed our outdated website into a modern, user-friendly platform that has significantly increased our conversion rates."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/1" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Dharmjeet Prajapti</h4>
+                            <p class="text-gray-500 text-sm">CEO, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-yellow-400 mb-4">
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The custom CMS Divyansh built for us has saved our team countless hours and made content management a breeze."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/2" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Priyanshu Gupta</h4>
+                            <p class="text-gray-500 text-sm">Marketing Director, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-yellow-400 mb-4">
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                        <i data-feather="star" class="w-5 h-5 inline-block"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Working with Divyansh was a pleasure. They delivered our e-commerce platform ahead of schedule and under budget."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/3" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Shivam Yadav</h4>
+                            <p class="text-gray-500 text-sm">Manager, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4 hero-gradient text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Ready to Start Your Project?</h2>
+            <p class="text-xl mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">I'm available for freelance work and would love to hear about your project.</p>
+            <a href="contact.html" class="inline-block bg-white text-indigo-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300" data-aos="fade-up" data-aos-delay="200">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">itsDivyansh</h3>
+                    <p class="text-gray-400">Creating digital experiences that make an impact.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Skills</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Skills</h4>
+                    <ul class="space-y-2">
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Frontend</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Backend</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">Database</a></li>
+                        <li><a href="skills.html" class="text-gray-400 hover:text-white transition duration-300">DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/mr-heart-hacker9999" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://x.com/MauryaDiv43215?t=8TPmPGHjIRITCY0yiitLbw&s=08" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/divyansh-maurya-9432112a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_mr_heart_hacker9999?igsh=N3ZuczZ2Mm5ieHdq" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="mailto:divyanshmaurya37@gmail.com" class="text-gray-400 hover:text-white transition duration-300">divyanshmaurya37@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 itsDivyansh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.querySelector('.mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS and Feather Icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>

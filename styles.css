@@ -1,0 +1,193 @@
+/* GLOBAL STYLES & MONOCHROME AESTHETIC (Page 2, Part 1) */
+:root {
+    --primary-black: #212121;
+    --secondary-gray: #757575;
+    --pure-white: #ffffff;
+    --accent-gold: #ffb74d; /* Subtle Gold/Orange Accent */
+    --transition-speed: 0.3s;
+    --border-line: 1px solid #e0e0e0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Serif font adds professionalism/editorial feel */
+    background-color: var(--pure-white);
+    color: var(--primary-black);
+    line-height: 1.5;
+    padding: 40px;
+    overflow-x: hidden;
+}
+
+.structured-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: var(--border-line);
+}
+
+/* 1. LAYOUT & RESPONSIVENESS (CSS GRID) */
+.structured-grid {
+    display: grid;
+    /* Responsive grid with minimum card width of 350px */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 2. HEADER: TYPEWRITER TEXT ANIMATION */
+
+/* Keyframe for typing out the text */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Keyframe for the blinking cursor */
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+.animate-text {
+    overflow: hidden; /* Hide the text until typed */
+    white-space: nowrap; /* Prevent line breaks */
+    margin: 0 auto 10px;
+    letter-spacing: 0.05em;
+    border-right: 0.1em solid var(--primary-black); /* The cursor */
+    /* Use 'steps' timing function for the classic typewriter effect */
+    animation: 
+        typing 4s steps(40, end), 
+        blink-caret 0.75s step-end infinite;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.structured-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.structured-header p {
+    font-size: 1.1rem;
+    color: var(--secondary-gray);
+    /* Adjust animation speed and delay for secondary line */
+    animation-delay: 4s;
+    animation-duration: 3s; 
+    /* The second line is initially hidden */
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* 3. PROJECT CARD BASE STYLES & Subtle Entrance */
+.project-card {
+    position: relative;
+    text-decoration: none;
+    color: var(--primary-black);
+    background-color: var(--pure-white);
+    padding: 30px;
+    /* Clean, squared look */
+    border: var(--border-line); 
+    
+    /* Initial state for entrance */
+    opacity: 0;
+    transform: translateY(20px);
+    
+    transition: box-shadow var(--transition-speed), border-color var(--transition-speed), transform var(--transition-speed);
+}
+
+/* Staggered Fade-Up Entrance (Will be defined on Page 3) */
+.project-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* animations  */
+
+
+
+/* 4. UNIQUE TRANSITION: BOTTOM HIGHLIGHT (Page 3, Part 1) */
+
+/* Create the highlight line using a pseudo-element */
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Thickness of the highlight */
+    background-color: var(--accent-gold);
+    transform: scaleX(0); /* Start hidden (zero width) */
+    transform-origin: left;
+    transition: transform var(--transition-speed) ease-out;
+}
+
+.project-card:hover::after {
+    /* Reveals the full highlight on hover */
+    transform: scaleX(1); 
+}
+
+/* HOVER EFFECT: Lift and Subtle Shadow */
+.project-card:hover {
+    /* Slight lift, very subtle */
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-black); /* Border darkens for emphasis */
+}
+
+/* TEXT STYLES */
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: var(--secondary-gray);
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.view-link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--accent-gold);
+    transition: color var(--transition-speed);
+}
+
+.project-card:hover .view-link {
+    color: var(--primary-black); /* Shifts to black for contrast */
+}
+
+/* 5. STAGGERED FADE-UP ENTRANCE (Page 3, Part 2) */
+
+/* Keyframe for the card entrance */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply staggered delay for a clean, sequential reveal */
+.card-1 { animation-delay: 5s; } /* Starts after header text animations */
+.card-2 { animation-delay: 5.2s; }
+.card-3 { animation-delay: 5.4s; }
+.card-4 { animation-delay: 5.6s; }
+.card-5 { animation-delay: 5.8s; }
+
+/* FOOTER STYLES */
+.structured-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: var(--border-line);
+    color: var(--secondary-gray);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
